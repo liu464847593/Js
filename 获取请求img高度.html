@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    var html = document.createElement('img'), // 创建img标签
+        oBody = document.getElementsByTagName('body')[0], // 获取body
+        img = new Image(),
+        imgSrc = 'http://dummyimage.com/240x400'; // 图片src地址
+
+
+    html.setAttribute('src',imgSrc); // 设置img.src
+    oBody.insertBefore(html,oBody.childNodes[0]); // img插入body
+    img.src = imgSrc;
+    img.onload = function(){
+        console.log('图片将加载的高度:'+img.height+'宽度：'+img.width);
+
+        html.width = 100 + img.width
+    }
+</script>
+</body>
+</html>
