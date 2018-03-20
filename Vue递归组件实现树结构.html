@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class='box'>
+    <ul v-for="(item,index) in $store.state.department" :key="index">
+        <tree-folder-contents :model="item"></tree-folder-contents>
+    </ul>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="https://unpkg.com/vuex"></script>
+<script type="text/javascript">
+    const store = new Vuex.Store({
+        state: {
+            department: [
+                {
+                    "attribute": 0,
+                    "departmentName": "产品组",
+                    "deptFullName": "产品组",
+                    "id": "8d3427d6eb18003ce7f3710362c718e2",
+                    "leaveMessage": "",
+                    "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                    "parentDepart": "",
+                    "parentPermission": "",
+                    "permission": "",
+                    "pinyin": "",
+                    "showOrder": 1,
+                    "totalUser": "3",
+                    "wxId": "3",
+                    "wxParentid": "1"
+                },
+                {
+                    "attribute": 0,
+                    "departmentName": "技术组",
+                    "deptFullName": "技术组",
+                    "id": "284813cd20f1b53ac5740ea019095f33",
+                    "leaveMessage": "",
+                    "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                    "parentDepart": "",
+                    "parentPermission": "",
+                    "permission": "",
+                    "pinyin": "",
+                    "showOrder": 2,
+                    "totalUser": "9",
+                    "wxId": "2",
+                    "wxParentid": "1"
+                },
+                {
+                    "attribute": 0,
+                    "departmentName": "事业二部",
+                    "deptFullName": "事业二部",
+                    "id": "783e4a3c77297585a590ca3e1441af27",
+                    "leaveMessage": "",
+                    "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                    "parentDepart": "",
+                    "parentPermission": "",
+                    "permission": "",
+                    "pinyin": "",
+                    "showOrder": 3,
+                    "totalUser": "19",
+                    "wxId": "4",
+                    "wxParentid": "1"
+                }]
+        },
+        mutations: {
+            add (state, o) {
+                let department = state.department;
+                (function fore (department, o) {
+                    for (let i = 0; i < department.length; i++) {
+                        if (department[i].id === o.deptId) {
+                            Vue.set(department[i], 'children', o.deptlist)
+                            return
+                        }
+                        if (department[i].children) {
+                            fore(department[i].children, o)
+                        }
+                    }
+                })(department, o)
+            }
+        }
+    })
+
+    Vue.component('tree-folder-contents', {
+        template: '<li @click.stop="add()">\n' +
+        '    {{model.departmentName}}\n' +
+        '    <ul>\n' +
+        '      <tree-folder v-for="(item,index) in model.children" :key="index" :model="item" v-if="model.children"></tree-folder>\n' +
+        '    </ul>\n' +
+        '  </li>',
+        name: 'treeFolder',
+        props: ['model'],
+        methods: {
+            add () {
+                let that = this;
+                let data = {
+                    "deptId": "783e4a3c77297585a590ca3e1441af27",
+                    "isDisplayMobilel": "0",
+                    "superBigOrg": false,
+                    "deptlist": [
+                        {
+                            "attribute": 0,
+                            "departmentName": "测试一部",
+                            "deptFullName": "事业二部->测试一部",
+                            "id": "0266df6183cc4773873ec477bda7aefa",
+                            "leaveMessage": "",
+                            "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                            "parentDepart": "783e4a3c77297585a590ca3e1441af27",
+                            "parentPermission": "",
+                            "permission": "",
+                            "pinyin": "",
+                            "showOrder": 0,
+                            "totalUser": "3",
+                            "wxId": "13",
+                            "wxParentid": "4"
+                        },
+                        {
+                            "attribute": 0,
+                            "departmentName": "测试三部",
+                            "deptFullName": "事业二部->测试三部",
+                            "id": "05306f9c635e47fd9e2b325f431a1a50",
+                            "leaveMessage": "",
+                            "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                            "parentDepart": "783e4a3c77297585a590ca3e1441af27",
+                            "parentPermission": "",
+                            "permission": "",
+                            "pinyin": "",
+                            "showOrder": 2,
+                            "totalUser": "2",
+                            "wxId": "15",
+                            "wxParentid": "4"
+                        },
+                        {
+                            "attribute": 0,
+                            "departmentName": "测试总部",
+                            "deptFullName": "事业二部->测试总部",
+                            "id": "ded1f42dea724911a532dd757271dbaf",
+                            "leaveMessage": "",
+                            "orgId": "5ce2e818-dbde-4a5d-acd0-9d69f10fafcb",
+                            "parentDepart": "783e4a3c77297585a590ca3e1441af27",
+                            "parentPermission": "",
+                            "permission": "",
+                            "pinyin": "",
+                            "showOrder": 3,
+                            "totalUser": "0",
+                            "wxId": "16",
+                            "wxParentid": "4"
+                        }
+                    ]}
+                that.$store.commit('add',data)
+            }
+        }
+    })
+
+    new Vue({
+        el: '.box',
+        store
+    })
+</script>
+</body>
+</html>
