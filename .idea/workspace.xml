@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddbe14e3-17fa-4597-b97f-da7a4c1337da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/vue/vue样式无法覆盖.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -150,12 +149,20 @@
       <updated>1522770706478</updated>
       <workItem from="1522770708550" duration="207000" />
       <workItem from="1522770918763" duration="5000" />
-      <workItem from="1523805360534" duration="125000" />
+      <workItem from="1523805360534" duration="152000" />
     </task>
+    <task id="LOCAL-00001" summary="vue样式无法覆盖">
+      <created>1523805507377</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1523805507377</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337000" />
+    <option name="totallyTimeSpent" value="364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -185,6 +192,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="vue样式无法覆盖" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue样式无法覆盖" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
