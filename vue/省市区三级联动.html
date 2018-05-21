@@ -24,29 +24,36 @@
             font: inherit;
             vertical-align: baseline;
         }
+
         /* HTML5 display-role reset for older browsers */
         article, aside, details, figcaption, figure,
         footer, header, hgroup, menu, nav, section {
             display: block;
         }
+
         body {
             line-height: 1;
         }
+
         ol, ul {
             list-style: none;
         }
+
         blockquote, q {
             quotes: none;
         }
+
         blockquote:before, blockquote:after,
         q:before, q:after {
             content: '';
             content: none;
         }
+
         table {
             border-collapse: collapse;
             border-spacing: 0;
         }
+
         .box {
             position: relative;
         }
@@ -55,6 +62,7 @@
             height: 32px;
             line-height: 32px;
             background: #FFFFFF;
+            box-sizing: border-box;
             border: 1px solid rgba(0, 0, 0, 0.15);
             border-radius: 4px;
             cursor: pointer;
@@ -74,6 +82,9 @@
         }
         .box .input.active {
             border-color: #40A9FF;
+        }
+        .box .input.finish {
+            border-color: #67c23a;
         }
         .box .input .please {
             font-size: 14px;
@@ -117,7 +128,7 @@
         }
         .box .cityBox .selectBox .Initials {
             float: left;
-            padding: 0 8px 0 8px;
+            padding: 5px 8px 0 8px;
             line-height: 22px;
         }
         .box .cityBox .selectBox .nameBox {
@@ -131,6 +142,10 @@
             line-height: 22px;
             border-radius: 4px;
             cursor: pointer;
+        }
+        .box .cityBox .selectBox .nameBox .provinceName.active {
+            color: #ffffff;
+            background: #0078d7;
         }
         .box .cityBox .selectBox .nameBox .provinceName:hover {
             color: #ffffff;
@@ -148,6 +163,10 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        .box .cityBox .selectCityBox .cityName.active {
+            color: #ffffff;
+            background: #0078d7;
+        }
         .box .cityBox .selectCityBox .cityName:hover {
             color: #ffffff;
             background: #0078d7;
@@ -164,6 +183,10 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        .box .cityBox .selectDistrictBox .districtName.active {
+            color: #ffffff;
+            background: #0078d7;
+        }
         .box .cityBox .selectDistrictBox .districtName:hover {
             color: #ffffff;
             background: #0078d7;
@@ -174,7 +197,7 @@
 <body>
 <div class="box">
     <!--选择框-->
-    <div class="input" :class="{'active':active}" @click.stop="clickBox">
+    <div class="input" :class="{'active':active,'finish':finish}" @click="clickBox">
         <span class="please" v-if="!cityObg.pName && !cityObg.cName && !cityObg.dName">请选择</span>
         <span class="pName" v-if="cityObg.pName">{{cityObg.pName}}</span>
         <span class="CName" v-if="cityObg.cName">{{cityObg.cName}}</span>
@@ -193,33 +216,60 @@
         <dl class="selectBox" v-if="current === 'province'">
             <dt class="Initials">A-G</dt>
             <dd class="nameBox">
-                <a v-for="(item,index) in cityData['A-G']" class="provinceName" @click.stop="addCity(item)">{{item.label}}</a>
+                <a v-for="(item,index) in cityData['A-G']"
+                   class="provinceName"
+                   @click.stop="addCity(item)"
+                   :class="{'active':item.label === cityObg.pName }">
+                    {{item.label}}
+                </a>
             </dd>
 
             <dt class="Initials">H-K</dt>
             <dd class="nameBox">
-                <a v-for="(item,index) in cityData['H-K']" class="provinceName" @click.stop="addCity(item)">{{item.label}}</a>
+                <a v-for="(item,index) in cityData['H-K']"
+                   class="provinceName" @click.stop="addCity(item)"
+                   :class="{'active':item.label === cityObg.pName }">
+                    {{item.label}}
+                </a>
             </dd>
 
             <dt class="Initials">L-S</dt>
             <dd class="nameBox">
-                <a v-for="(item,index) in cityData['L-S']" class="provinceName" @click.stop="addCity(item)">{{item.label}}</a>
+                <a v-for="(item,index) in cityData['L-S']"
+                   class="provinceName"
+                   @click.stop="addCity(item)"
+                   :class="{'active':item.label === cityObg.pName }">
+                    {{item.label}}
+                </a>
             </dd>
 
             <dt class="Initials">T-Z</dt>
             <dd class="nameBox">
-                <a v-for="(item,index) in cityData['T-Z']" class="provinceName" @click.stop="addCity(item)">{{item.label}}</a>
+                <a v-for="(item,index) in cityData['T-Z']"
+                   class="provinceName"
+                   @click.stop="addCity(item)"
+                   :class="{'active':item.label === cityObg.pName }">
+                    {{item.label}}
+                </a>
             </dd>
         </dl>
 
         <!--市-->
         <ul class="selectCityBox" v-if="current === 'city'">
-            <li class="cityName" v-for="(item,index) in city" @click.stop="addDistrict(item)">{{item.label}}</li>
+            <li class="cityName" v-for="(item,index) in city"
+                :class="{'active':item.label === cityObg.cName }"
+                @click.stop="addDistrict(item)">
+                {{item.label}}
+            </li>
         </ul>
 
         <!--区-->
         <ul class="selectDistrictBox" v-if="current === 'district'">
-            <li class="districtName" v-for="(item,index) in district" @click.stop="postResult(item)">{{item.label}}</li>
+            <li class="districtName" v-for="(item,index) in district"
+                @click.stop="postResult(item)"
+                :class="{'active':item.label === cityObg.dName }">
+                {{item.label}}
+            </li>
         </ul>
 
     </div>
@@ -4650,76 +4700,103 @@
                 "label": "海南省"
             }]
     }
-
     new Vue({
         el: '.box',
         data () {
             return {
-                active:false,
-                cityData: {},
-                current: 'province',
-                city:[],
-                district:[],
-                cityObg:{
-                    pName:'',
-                    cName:'',
-                    dName:'',
-                    code:''
+                active: false,
+                finish: false,   //当城市选择完
+                cityData: {}, //所有城市数据
+                current: 'province',//当前状态 省|市|区
+                city: [],
+                district: [],
+                cityObg: {
+                    pName: '',//省
+                    cName: '',//市
+                    dName: '',//区
+                    code: '' //编码
                 }
             }
         },
-        methods:{
-            clickBox(){
+        props: ['model'],
+        methods: {
+            clickBox () {
                 this.active = true;
             },
-            select(o){
+            select (o) {
                 this.current = o
             },
-            addCity(o){
+            addCity (o) {
                 this.city = [];
                 this.district = [];
                 this.city = o.children;
                 this.current = 'city';
                 this.cityObg.pName = o.label;
                 this.cityObg.cName = '';
+                this.cityObg.dName = '';
                 this.cityObg.code = o.value;
-                this.$emit('city',this.cityObg)
+                this.$emit('city', this.cityObg)
             },
-            addDistrict(o){
+            addDistrict (o) {
                 this.district = [];
                 this.district = o.children;
                 this.current = 'district';
                 this.cityObg.cName = o.label;
                 this.cityObg.dName = '';
                 this.cityObg.code = o.value;
-                this.$emit('city',this.cityObg)
+                this.$emit('city', this.cityObg)
             },
-            postResult(o){
+            postResult (o) {
                 this.cityObg.dName = o.label;
                 this.cityObg.code = o.value;
                 this.active = false;
-                this.$emit('city',this.cityObg)
-            },
-            close(){
-                console.log(1);
-                this.active = false
+                this.$emit('city', this.cityObg)
             }
         },
-        mounted(){
+        watch: {
+            model (n, o) {
+                this.cityObg.pName = n.pName;
+                this.cityObg.cName = n.cName;
+                this.cityObg.dName = n.dName;
+                this.cityObg.code = n.code;
+            }
+        },
+        mounted () {
             this.cityData = map;
-            // 在框外面点击关闭下拉框（之前一个页面引入多个城市组件，只有最后一个才能关闭用的是window.onclick）
-            document.addEventListener('click', (e) => {
-                console.log(e.target);
-                if (!this.$el.contains(e.target)) {
-                    this.active = false
+
+            if (this.model) {
+                this.cityObg.pName = this.model.pName;
+                this.cityObg.cName = this.model.cName;
+                this.cityObg.dName = this.model.dName;
+                this.cityObg.code = this.model.code;
+                if (this.model.dName) {
+                    this.current = 'district'
+                } else if (this.model.cName) {
+                    this.current = 'city';
+                } else {
+                    this.current = 'district';
                 }
-            })
-            // document.addEventListener('click',(e)=>{
-            //     console.log(e.target);
-            //     if(e.target!==this.$el.target){
-            //         this.active = false;
-            //     }
-            // });
+                // 遍历获取回显城市数据
+                for (let i in this.cityData) {
+                    this.cityData[i].map((index) => {
+                        if (index.label === this.cityObg.pName) {
+                            this.city = index.children
+                        }
+                    })
+                }
+                // 遍历获取回显地区数据
+                this.city.map((index) => {
+                    if (index.label === this.cityObg.cName) {
+                        this.district = index.children
+                    }
+                })
+            }
+            document.addEventListener('click', (e) => {
+                if (!this.$el.contains(e.target)) {
+                    this.active = false;
+                }
+                // this.finish = true;
+            });
         }
     })
 </script>

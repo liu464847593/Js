@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddbe14e3-17fa-4597-b97f-da7a4c1337da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/修改默认滚动条样式.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/vue/vue样式无法覆盖.html" afterPath="$PROJECT_DIR$/vue/vue样式无法覆盖.html" />
+      <change beforePath="$PROJECT_DIR$/vue/省市区三级联动.html" afterPath="$PROJECT_DIR$/vue/省市区三级联动.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,18 +22,45 @@
         <entry file="file://$PROJECT_DIR$/vue/vue样式无法覆盖.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="修改默认滚动条样式.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="修改默认滚动条样式.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/修改默认滚动条样式.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vue递归组件实现树结构.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/Vue递归组件实现树结构.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-150">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="省市区三级联动.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/省市区三级联动.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="4764" column="32" lean-forward="false" selection-start-line="4764" selection-start-column="32" selection-end-line="4764" selection-end-column="32" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#8883#228824#0" expanded="false" />
+                <element signature="e#228875#229319#0" expanded="false" />
+                <element signature="e#228896#229309#0" expanded="false" />
+                <element signature="e#229364#230504#0" expanded="false" />
+                <element signature="e#230521#230755#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +82,7 @@
       <list>
         <option value="$PROJECT_DIR$/vue/vue样式无法覆盖.html" />
         <option value="$PROJECT_DIR$/css/修改默认滚动条样式.html" />
+        <option value="$PROJECT_DIR$/vue/省市区三级联动.html" />
       </list>
     </option>
   </component>
@@ -107,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,21 +143,15 @@
               <item name="Js" type="b2602c69:ProjectViewProjectNode" />
               <item name="Js" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Js" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -164,7 +187,8 @@
       <workItem from="1522770708550" duration="207000" />
       <workItem from="1522770918763" duration="5000" />
       <workItem from="1523805360534" duration="216000" />
-      <workItem from="1524582483653" duration="783000" />
+      <workItem from="1524582483653" duration="890000" />
+      <workItem from="1526915582175" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="vue样式无法覆盖">
       <created>1523805507377</created>
@@ -180,17 +204,23 @@
       <option name="project" value="LOCAL" />
       <updated>1523805516648</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改默认滚动条样式-- webkit">
+      <created>1524583295843</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524583295843</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1211000" />
+    <option name="totallyTimeSpent" value="2078000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11383928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -217,13 +247,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="vue样式无法覆盖" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue样式无法覆盖" />
+    <MESSAGE value="修改默认滚动条样式-- webkit" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改默认滚动条样式-- webkit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vue/vue样式无法覆盖.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/修改默认滚动条样式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue/vue样式无法覆盖.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -235,7 +282,7 @@
     <entry file="file://$PROJECT_DIR$/vue/vue样式无法覆盖.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -245,6 +292,29 @@
         <state relative-caret-position="132">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/Vue递归组件实现树结构.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/省市区三级联动.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="4764" column="32" lean-forward="false" selection-start-line="4764" selection-start-column="32" selection-end-line="4764" selection-end-column="32" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#8883#228824#0" expanded="false" />
+            <element signature="e#228875#229319#0" expanded="false" />
+            <element signature="e#228896#229309#0" expanded="false" />
+            <element signature="e#229364#230504#0" expanded="false" />
+            <element signature="e#230521#230755#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
